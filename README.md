@@ -1,26 +1,36 @@
-# BookMyStay 🏡
+# BookMyStay 🏡  
 
-**BookMyStay** is a full-stack web application built using the **MERN stack** that allows users to list, search, and book short-term accommodations with ease. The project offers seamless authentication, dynamic property management, and a clean user interface optimized for responsiveness.
-
----
-
-## 🚀 Features
-
-- 🔐 **User Authentication** – Secure signup/login authentication and session handling
-- 🏘️ **Property Listings** – Users can create, update, delete, and browse property listings (CRUD)
-- 📅 **Booking System** – Real-time stay booking interface with date selection and listing availability
-- 🔍 **Search & Filters** – Find stays based on location, availability, and price (optional enhancements)
-- 📱 **Responsive UI** – Built using **Tailwind CSS** and **React.js**, optimized for all device sizes
-- 🧑‍💻 **Role-based Access** – Protected routes and features for logged-in users
+**BookMyStay** is a **full-stack accommodation listing web application** that enables users to create, update, view, and delete property listings, along with adding and deleting reviews. It is built using **Node.js, Express.js, MongoDB, EJS, and Bootstrap**, focusing on **server-side rendering, responsive design, and RESTful API integration**.  
 
 ---
 
-## 🛠️ Technologies Used
+## 🚀 Features  
 
-| Category       | Tech Stack                      |
-|----------------|---------------------------------|
-| Frontend       | React.js, Tailwind CSS          |
-| Backend        | Node.js, Express.js             |
-| Database       | MongoDB                         |
-| APIs           | RESTful APIs                    |
-| Tools          | Git, GitHub, VS Code            |
+- 🏘️ **Property Listings** – Create, update, delete, and browse accommodation listings (**CRUD operations**)  
+- 📝 **Review System** – Add and delete reviews for listings  
+- 🌐 **RESTful APIs** – API routes to manage listings and reviews effectively  
+- 📱 **Responsive UI** – Built using **EJS** templates and **Bootstrap** for cross-device compatibility  
+
+---
+
+## 🛠️ Technologies Used  
+
+| Category   | Tech Stack                                   |  
+|------------|----------------------------------------------|  
+| Frontend   | HTML, CSS, JavaScript, EJS, Bootstrap        |  
+| Backend    | Node.js, Express.js                          |  
+| Database   | MongoDB                                      |  
+| APIs       | RESTful APIs                                 |  
+| Tools      | Git, GitHub, VS Code                         |  
+
+---
+
+## 🔮 Future Enhancements  
+
+- 🔐 **User Authentication** – Secure signup/login and session handling  
+- 📅 **Booking System** – Real-time accommodation booking with availability tracking  
+- 🔍 **Search & Filters** – Find listings by location, availability, and price  
+- 🧑‍💻 **Role-based Access** – Separate privileges for admins and users  
+- 🚀 **Deployment** – Host the application on Render/Netlify/Heroku for live access  
+
+---
