@@ -31,10 +31,10 @@ const listingSchema = new Schema({
     url: {
       type: String,
       default:
-        "https://images.unsplash.com/photo-1618140052121-39fc6db33972?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bG9kZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
+        "https://res.cloudinary.com/dqhvevsha/image/upload/v1764223915/wanderlust_DEV/nqfq5pgnjmxm8d1s1ytu.jpg",
       set: (v) =>
         v === ""
-          ? "https://images.unsplash.com/photo-1618140052121-39fc6db33972?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bG9kZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
+          ? "https://res.cloudinary.com/dqhvevsha/image/upload/v1764223915/wanderlust_DEV/nqfq5pgnjmxm8d1s1ytu.jpg"
           : v,
     },
   },
