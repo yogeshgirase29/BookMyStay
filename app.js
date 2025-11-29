@@ -24,6 +24,7 @@ const userRouter = require("./routes/user.js");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
+const Listing = require("./models/listing");
 
 main()
   .then(() => {
@@ -46,7 +47,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 const store = MongoStore.create({
   mongoUrl: dburl,
-    secret: process.env.SECRET,
+  secret: process.env.SECRET,
   touchAfter: 24 * 3600,
 });
 
@@ -66,11 +67,6 @@ const sessionOptions = {
   },
 };
 
-
-// app.get("/", (req, res) => {
-//   res.send("Hi, I am root");
-// });
-
 app.use(session(sessionOptions));
 app.use(flash());
 
@@ -86,6 +82,11 @@ app.use((req, res, next) => {
   res.locals.error = req.flash("error");
   res.locals.currUser = req.user;
   next();
+});
+
+app.get("/", async (req, res) => {
+  const allListings = await Listing.find({});
+  res.render("listings/index", { allListings });
 });
 
 app.use("/listings", listingRouter);

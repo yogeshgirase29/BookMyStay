@@ -11,8 +11,25 @@ body {
 
 /* Navbar */
 .navbar {
-  height: 5rem;
+  min-height: 5rem;   
   background-color: white;
+}
+
+.navbar-collapse {
+  background-color: white !important;
+  padding: 1rem !important;
+  border-radius: 1rem;
+}
+
+/* Allow expansion on small screens */
+@media (max-width: 768px) {
+  .navbar {
+    padding-bottom: 1rem;
+  }
+
+  .navbar-collapse {
+    width: 100%;
+  }
 }
 
 .fa-compass {

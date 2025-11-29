@@ -47,10 +47,7 @@ module.exports.renderEditForm = async (req, res) => {
     return res.redirect("/listings");
   }
   let originalImageUrl = listing.image.url;
-  originalImageUrl = originalImageUrl.replace(
-    "/upload/",
-    "/upload/w_250/"
-  );
+  originalImageUrl = originalImageUrl.replace("/upload/", "/upload/w_250/");
   res.render("listings/edit.ejs", { listing, originalImageUrl });
 };
 
@@ -72,4 +69,23 @@ module.exports.destroyListing = async (req, res) => {
   const deletedListing = await Listing.findByIdAndDelete(id);
   req.flash("success", "Listing Deleted!");
   res.redirect("/listings");
+};
+
+module.exports.searchListings = async (req, res) => {
+  const { q } = req.query;
+
+  if (!q || q.trim() === "") {
+    req.flash("error", "Please enter a search term");
+    return res.redirect("/listings");
+  }
+
+  // Case-insensitive search using regex
+  const listings = await Listing.find({
+    $or: [
+      { location: { $regex: q, $options: "i" } },
+      { country: { $regex: q, $options: "i" } },
+    ],
+  });
+
+  res.render("listings/search.ejs", { listings, q });
 };
